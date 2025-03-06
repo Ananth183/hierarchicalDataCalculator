@@ -1,4 +1,8 @@
-// Request Class
+/*
+    Author: Anantha Gadamsetty
+    Description: Input wrapper for the calculating the hierarchial data from HierarchicalDataInvocable
+    Date: 06/03/2025
+*/
 public with sharing class HierarchicalDataRequest {
     @AuraEnabled @InvocableVariable(label='Parent Object' required=true)
     public String parentObject;

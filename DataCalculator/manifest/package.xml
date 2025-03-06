@@ -24,5 +24,24 @@
         <members>Child__c</members>
         <name>CustomObject</name>
     </types>
+    <types>
+        <members>Parent__c</members>
+        <members>Child__c</members>
+        <name>CustomTab</name>
+    </types>
+     <types>
+        <members>Hierarchical_Data_Calculator</members>
+        <name>CustomApplication</name>
+    </types>
+     <types>
+        <members>Hierarchical_Data_Calculator_UtilityBar</members>
+        <members>Parent_Record_Page</members>
+        <members>Home_Page_Default2</members>
+        <name>FlexiPage</name>
+    </types>
+     <types>
+        <members>Parent__c.Calculate_Hierarchical_Data</members>
+        <name>QuickAction</name>
+    </types>
     <version>62.0</version>
 </Package>

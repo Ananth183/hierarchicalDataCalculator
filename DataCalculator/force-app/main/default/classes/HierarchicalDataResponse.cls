@@ -1,4 +1,9 @@
-// Response Class
+/*
+    Author: Anantha Gadamsetty
+    Description: Output wrapper for the calculating the hierarchial data from HierarchicalDataInvocable
+    Date: 06/03/2025
+*/
+
 public with sharing class HierarchicalDataResponse {
     @AuraEnabled @InvocableVariable(label='Parent Id' required=true)
     public Id parentId;

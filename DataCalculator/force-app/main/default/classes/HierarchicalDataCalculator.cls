@@ -1,4 +1,10 @@
-// Calculation Service Class
+/*
+    Author: Anantha Gadamsetty
+    Description: Service class to calculate hierarchial data from child and parent records
+    Date: 06/03/2025
+*/
+
+
 public with sharing class HierarchicalDataCalculator {
     public static List<HierarchicalDataResponse> performCalculations(HierarchicalDataRequest request, List<SObject> childRecords) {
         Map<Id, List<SObject>> parentToChildrenMap = new Map<Id, List<SObject>>();
@@ -40,7 +46,17 @@ public with sharing class HierarchicalDataCalculator {
                                                                 totalValue,
                                                                 childValues
                                                                	));
+
+            calculationResults.sort(new HierarchicalDataResponseSorter());
+
         }
         return calculationResults;
+    }
+
+      // Custom Comparator for sorting by parent name
+      public class HierarchicalDataResponseSorter implements Comparator<HierarchicalDataResponse> {
+        public Integer compare(HierarchicalDataResponse a, HierarchicalDataResponse b) {
+            return a.parentName.toLowerCase().compareTo(b.parentName.toLowerCase());
+        }
     }
 }

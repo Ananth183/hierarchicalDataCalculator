@@ -1,4 +1,9 @@
-// Selector Class
+/*
+    Author: Anantha Gadamsetty
+    Description: Selector class to get child records based on the parent record
+    Date: 06/03/2025
+*/
+
 public with sharing class HierarchicalDataSelector {
     public static List<SObject> getChildRecords(HierarchicalDataRequest request) {
         List<Id> parentIds = new List<Id>();
