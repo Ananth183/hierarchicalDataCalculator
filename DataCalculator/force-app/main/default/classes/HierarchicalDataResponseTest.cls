@@ -19,7 +19,9 @@ private class HierarchicalDataResponseTest {
         insert children;
     }
 
-
+    /*
+        Test method to verify the functionality of the HierarchicalDataResponse class.
+    */
     @isTest
     static void testHierarchicalDataResponse() {
         // Test Data Setup

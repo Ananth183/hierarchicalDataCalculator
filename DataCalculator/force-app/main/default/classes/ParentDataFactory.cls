@@ -6,6 +6,13 @@
 
 @isTest
 public with sharing class ParentDataFactory {
+
+    /*
+        Method to generate a list of Parent__c records.
+        
+        @param count - The number of Parent__c records to create.
+        @return A list of created Parent__c records.
+    */
     public static List<Parent__c> createParents(Integer count) {
         List<Parent__c> parents = new List<Parent__c>();
         for (Integer i = 0; i < count; i++) {

@@ -17,7 +17,9 @@ public with sharing class HierarchicalDataCalculatorTest {
         insert children;
     }
 
-
+    /*
+        Test method to verify the calculations performed by the HierarchicalDataCalculator class.
+    */
     @isTest
     static void testPerformCalculations() {
         List<Parent__c> parents = [SELECT Id, Name FROM Parent__c];

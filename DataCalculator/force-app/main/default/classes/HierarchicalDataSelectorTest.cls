@@ -19,7 +19,10 @@ public with sharing class HierarchicalDataSelectorTest {
         insert children;
     }
 
-    
+    /*
+        Test method to verify the functionality of the getChildRecords method.
+        It checks if the correct number of child records are retrieved based on the parent records.
+    */
     @isTest
     static void testGetChildRecords() {
         List<Parent__c> parents = [SELECT Id FROM Parent__c];

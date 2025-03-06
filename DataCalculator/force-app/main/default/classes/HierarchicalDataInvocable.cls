@@ -6,6 +6,12 @@
 
 public with sharing class HierarchicalDataInvocable {
     
+     /*
+        Invocable method to calculate AVG, MIN, MAX, and SUM for child records under each parent dynamically.
+        
+        @param requestList - List of HierarchicalDataRequest objects to process.
+        @return A list of lists of HierarchicalDataResponse containing the calculated data.
+    */
     @InvocableMethod(label='Calculate Hierarchical Data' description='Calculates AVG, MIN, MAX, and SUM for child records under each parent dynamically.')
     public static List<List<HierarchicalDataResponse>> calculateHierarchicalData(List<HierarchicalDataRequest> requestList) {
         try{

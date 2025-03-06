@@ -19,7 +19,9 @@ public with sharing class HierarchicalDataInvocableTest {
         insert children;
     }
 
-    
+    /*
+        Test method to validate the invocable method calculation results.
+    */
     @isTest
     static void testInvocableMethod() {
         List<Parent__c> parents = [SELECT Id, Name FROM Parent__c];
