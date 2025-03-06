@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Package xmlns="http://soap.sforce.com/2006/04/metadata">
+    <types>
+        <members>HierarchicalDataResponse</members>
+        <members>HierarchicalDataRequest</members>
+        <members>HierarchicalDataSelector</members>
+        <members>HierarchicalDataCalculator</members>
+        <members>HierarchicalDataInvocable</members>
+        <name>ApexClass</name>
+    </types>
+    <types>
+        <members>Calculate_Hierarchical_data</members>
+        <members>Calculate_Hierarchical_Data_Of_Parent_Record</members>
+        <name>flow</name>
+    </types>
+    <types>
+        <members>Parent__c</members>
+        <members>Child__c</members>
+        <name>CustomObject</name>
+    </types>
+    <version>62.0</version>
+</Package>
