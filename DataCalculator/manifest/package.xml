@@ -6,6 +6,12 @@
         <members>HierarchicalDataSelector</members>
         <members>HierarchicalDataCalculator</members>
         <members>HierarchicalDataInvocable</members>
+        <members>HierarchicalDataCalculatorTest</members>
+        <members>HierarchicalDataInvocableTest</members>
+        <members>HierarchicalDataSelectorTest</members>
+        <members>HierarchicalDataResponseTest</members>
+        <members>ParentDataFactory</members>
+        <members>ChildDataFactory</members>
         <name>ApexClass</name>
     </types>
     <types>
