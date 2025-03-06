@@ -186,7 +186,7 @@
             <inputParameters>
                 <name>label</name>
                 <value>
-                    <stringValue>Calculation Result</stringValue>
+                    <stringValue>Data Results</stringValue>
                 </value>
             </inputParameters>
             <inputParameters>

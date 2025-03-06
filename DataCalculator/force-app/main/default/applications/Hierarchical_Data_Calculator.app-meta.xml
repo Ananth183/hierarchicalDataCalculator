@@ -20,7 +20,7 @@
     </actionOverrides>
     <actionOverrides>
         <actionName>Tab</actionName>
-        <content>Home_Page_Default</content>
+        <content>Home_Page_DataCalculator</content>
         <formFactor>Large</formFactor>
         <skipRecordTypeSelect>false</skipRecordTypeSelect>
         <type>Flexipage</type>
@@ -37,7 +37,7 @@
     <isNavPersonalizationDisabled>false</isNavPersonalizationDisabled>
     <isNavTabPersistenceDisabled>false</isNavTabPersistenceDisabled>
     <isOmniPinnedViewEnabled>false</isOmniPinnedViewEnabled>
-    <label>Hierarchical Data Calculator</label>
+    <label>Data Calculator</label>
     <navType>Standard</navType>
     <tabs>Parent__c</tabs>
     <tabs>Child__c</tabs>

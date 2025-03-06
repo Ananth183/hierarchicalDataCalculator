@@ -1,9 +1,8 @@
 /*
     Author: Anantha Gadamsetty
-    Description: Service class to calculate hierarchial data from child and parent records
+    Description: Service class to calculate hierarchical data from child and parent records
     Date: 06/03/2025
 */
-
 
 public with sharing class HierarchicalDataCalculator {
     public static List<HierarchicalDataResponse> performCalculations(HierarchicalDataRequest request, List<SObject> childRecords) {
@@ -22,21 +21,30 @@ public with sharing class HierarchicalDataCalculator {
         }
         
         List<HierarchicalDataResponse> calculationResults = new List<HierarchicalDataResponse>();
-        for (Id parentId : parentToChildrenMap.keySet()) {
+        for (Id parentId : parentRecordMap.keySet()) {
             List<SObject> childList = parentToChildrenMap.get(parentId);
-            if (childList == null || childList.isEmpty()) continue;
-            List<String> childValuesList = new List<String>();
+            
             Decimal totalValue = 0, minValue = null, maxValue = null;
-            for (SObject child : childList) {
-                Decimal value = (Decimal)child.get(request.valueField);
-                totalValue += value;
-                
-                childValuesList.add(String.valueOf(value));
-                if (minValue == null || value < minValue) minValue = value;
-                if (maxValue == null || value > maxValue) maxValue = value;
+            List<String> childValuesList = new List<String>();
+            
+            if (childList != null && !childList.isEmpty()) {
+                for (SObject child : childList) {
+                    Decimal value = (Decimal)child.get(request.valueField);
+                    totalValue += value;
+                    
+                    // Format value: Show decimal only if necessary
+                    String formattedValue = value == value.setScale(0) ? String.valueOf(value.intValue()) : String.valueOf(value);
+                    childValuesList.add(formattedValue);
+
+                    if (minValue == null || value < minValue) minValue = value;
+                    if (maxValue == null || value > maxValue) maxValue = value;
+                }
             }
-            Decimal avgValue = totalValue / childList.size();
-            String childValues = String.join(childValuesList, ',');
+            
+            Decimal avgValue = (childList != null && !childList.isEmpty()) ? totalValue / childList.size() : 0;
+            minValue = (minValue != null) ? minValue : 0;
+            maxValue = (maxValue != null) ? maxValue : 0;
+            String childValues = String.join(childValuesList, ' , ');
             
             calculationResults.add(new HierarchicalDataResponse(parentId, 
                                                                 (String)parentRecordMap.get(parentId).get('Name'),
@@ -45,16 +53,15 @@ public with sharing class HierarchicalDataCalculator {
                                                                 maxValue, 
                                                                 totalValue,
                                                                 childValues
-                                                               	));
-
-            calculationResults.sort(new HierarchicalDataResponseSorter());
-
+                                                                ));
         }
+        
+        calculationResults.sort(new HierarchicalDataResponseSorter());
         return calculationResults;
     }
 
-      // Custom Comparator for sorting by parent name
-      public class HierarchicalDataResponseSorter implements Comparator<HierarchicalDataResponse> {
+    // Custom Comparator for sorting by parent name
+    public class HierarchicalDataResponseSorter implements Comparator<HierarchicalDataResponse> {
         public Integer compare(HierarchicalDataResponse a, HierarchicalDataResponse b) {
             return a.parentName.toLowerCase().compareTo(b.parentName.toLowerCase());
         }

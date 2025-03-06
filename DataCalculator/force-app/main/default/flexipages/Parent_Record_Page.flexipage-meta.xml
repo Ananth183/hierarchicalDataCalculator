@@ -49,36 +49,6 @@
                 <identifier>RecordNameField</identifier>
             </fieldInstance>
         </itemInstances>
-        <itemInstances>
-            <fieldInstance>
-                <fieldItem>Record.Sum__c</fieldItem>
-                <identifier>RecordSum__cField</identifier>
-            </fieldInstance>
-        </itemInstances>
-        <itemInstances>
-            <fieldInstance>
-                <fieldItem>Record.Minimum__c</fieldItem>
-                <identifier>RecordMin__cField</identifier>
-            </fieldInstance>
-        </itemInstances>
-        <itemInstances>
-            <fieldInstance>
-                <fieldItem>Record.Maximum__c</fieldItem>
-                <identifier>RecordMaximum__cField</identifier>
-            </fieldInstance>
-        </itemInstances>
-        <itemInstances>
-            <fieldInstance>
-                <fieldItem>Record.Average__c</fieldItem>
-                <identifier>RecordAverage__cField</identifier>
-            </fieldInstance>
-        </itemInstances>
-        <itemInstances>
-            <fieldInstance>
-                <fieldItem>Record.Child_Values__c</fieldItem>
-                <identifier>RecordChild_Values__cField</identifier>
-            </fieldInstance>
-        </itemInstances>
         <name>Facet-cdccb0f4-88aa-454d-88b9-23724af25f0b</name>
         <type>Facet</type>
     </flexiPageRegions>
