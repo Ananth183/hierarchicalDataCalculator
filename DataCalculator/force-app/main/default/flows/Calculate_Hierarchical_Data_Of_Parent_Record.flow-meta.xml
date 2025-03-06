@@ -178,7 +178,7 @@
         <allowPause>true</allowPause>
         <fields>
             <name>Results</name>
-            <fieldText>&lt;p&gt;{!calculationResponseRecord.Sum__c}&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;{!calculationResponseRecord.Minimum__c}&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;{!calculationResponseRecord.Maximum__c}&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;{!calculationResponseRecord.Average__c}&lt;/p&gt;</fieldText>
+            <fieldText>&lt;p class=&quot;ql-indent-2&quot;&gt;&lt;strong&gt;SUM:                                            &lt;/strong&gt;{!calculationResponseRecord.Sum__c}&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p class=&quot;ql-indent-2&quot;&gt;&lt;strong&gt;MINIMUM:   &lt;/strong&gt;{!calculationResponseRecord.Minimum__c}&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p class=&quot;ql-indent-2&quot;&gt;&lt;strong&gt;MAXIMUM: &lt;/strong&gt;{!calculationResponseRecord.Maximum__c}&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p class=&quot;ql-indent-2&quot;&gt;&lt;strong&gt;AVERAGE: &lt;/strong&gt;{!calculationResponseRecord.Average__c}&lt;/p&gt;</fieldText>
             <fieldType>DisplayText</fieldType>
         </fields>
         <showFooter>true</showFooter>
