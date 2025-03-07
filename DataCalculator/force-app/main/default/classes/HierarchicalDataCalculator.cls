@@ -44,6 +44,12 @@ public with sharing class HierarchicalDataCalculator {
             if (childList != null && !childList.isEmpty()) {
                 for (SObject child : childList) {
                     Decimal value = (Decimal)child.get(request.valueField);
+
+                    // Ensure value is not null
+                    if (value == null) {
+                        value = 0; 
+                    }
+
                     totalValue += value;
                     String formattedValue = value == value.setScale(0) ? String.valueOf(value.intValue()) : String.valueOf(value);
                     childValuesList.add(formattedValue);
